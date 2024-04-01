@@ -4,10 +4,13 @@ package ntgcalls
 import "C"
 
 type StreamType int
+type StreamStatus int
 type InputMode int
 
 type StreamEndCallback func(chatId int64, streamType StreamType)
 type UpgradeCallback func(chatId int64, streamType MediaState)
+type DisconnectCallback func(chatId int64)
+type SignalCallback func(chatId int64, signal []byte)
 
 const (
 	AudioStream StreamType = iota
@@ -15,19 +18,27 @@ const (
 )
 
 const (
-	InputModeFile InputMode = iota
+	InputModeFile InputMode = 1 << iota
 	InputModeShell
 	InputModeFFmpeg
+	InputModeNoLatency
 )
 
-func (ctx InputMode) ParseToC() C.enum_InputMode {
+const (
+	PlayingStream StreamStatus = iota
+	PausedStream
+	IdlingStream
+)
+
+func (ctx InputMode) ParseToC() C.ntg_input_mode_enum {
+
 	switch ctx {
 	case InputModeFile:
-		return C.File
+		return C.NTG_FILE
 	case InputModeShell:
-		return C.Shell
+		return C.NTG_SHELL
 	case InputModeFFmpeg:
-		return C.FFmpeg
+		return C.NTG_FFMPEG
 	}
-	return C.File
+	return C.NTG_FILE
 }
