@@ -1,7 +1,7 @@
 package ntgcalls
 
 /*
-#cgo LDFLAGS: -L/root/gotgcalls/ntgcalls/bindings/lib -lntgcalls -Wl,-rpath=/root/gotgcalls/ntgcalls/bindings/lib
+#cgo LDFLAGS: -L/GoTgCalls/ntgcalls/bindings/lib -lntgcalls -Wl,-rpath=/GoTgCalls/ntgcalls/bindings/lib
 */
 import "C"
 
