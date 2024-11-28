@@ -1,6 +1,6 @@
 # README - Native Libraries Download for GoTgCalls
 
-This folder (`/GoTgCalls/ntgcalls/bindings/lib`) is dedicated to loading the native libraries required by **GoTgCalls**. Users must download the appropriate library manually based on their operating system.
+This folder (`/GoTgCalls/ntgcalls/bindings/lib`) is dedicated to loading the native libraries required by **GoTgCalls**. Users are required to manually download the appropriate library based on their operating system, unless they use the `setup_libraries.sh` script that automates the process.
 
 ## System Requirements
 
@@ -8,7 +8,7 @@ To ensure **GoTgCalls** functions properly, you need to download the specific **
 
 Supported library types: **`-shared_libs.zip`**
 
-### Platforms Currently Unsupported
+### Currently Unsupported Platforms
 The following platforms are not currently supported by **GoTgCalls**:
 - **Linux ARM**
 - **Windows ARM**
@@ -42,7 +42,7 @@ Manually move the extracted library file into the `lib` folder:
 ├── ntgcalls/
 │   ├── bindings/
 │       ├── lib/
-│           ├── libntgcalls.so  # Linux example
+│           ├── libntgcalls.so  # Example for Linux
 ```
 
 ### 3. Set Permissions (Linux)
@@ -54,7 +54,7 @@ chmod +x libntgcalls.so
 ### 4. Verify the Setup
 Once the file has been placed in the correct folder:
 - Run the **GoTgCalls** client.
-- Check that there are no errors related to loading the native library.
+- Verify that there are no errors related to loading the native library.
 
 ## Troubleshooting
 
@@ -71,3 +71,29 @@ Once the file has been placed in the correct folder:
 
 - **Compatibility Issues**:  
   Confirm that the downloaded library version matches the requirements of **GoTgCalls** (check the official documentation or changelog).
+
+---
+
+## `setup_libraries.sh` Script
+
+The `/GoTgCalls/setup_libraries.sh` script automates the process of downloading and setting up the native libraries required for **GoTgCalls**, simplifying the steps outlined above. Here’s an overview of its functionality:
+
+### Description
+
+The `setup_libraries.sh` script automatically performs the following actions:
+
+1. **Detects the Operating System**: The script automatically detects the operating system being used (Linux, Windows, macOS).
+2. **Downloads the Correct Package**: Based on the detected OS, the script downloads the appropriate `-shared_libs.zip` package from the GitHub repository.
+3. **Extracts the Files**: Once downloaded, the script extracts the contents of the `.zip` file.
+4. **Moves the Files**: The script moves the extracted library file into the `/GoTgCalls/ntgcalls/bindings/lib` folder.
+5. **Sets Permissions** (Linux): If the OS is Linux, the script automatically sets the executable permissions for the native library.
+
+### Usage
+
+To run the script, simply execute the following command in the terminal (from the root of the project):
+
+```bash
+cd GoTgCalls/ && setup_libraries.sh
+```
+
+The script will automatically handle downloading, extracting, and setting up the libraries.
