@@ -2,7 +2,7 @@ package ntgcalls
 
 import (
 	"github.com/amarnathcjd/gogram/telegram"
-	ntgcalls "github.com/pytgcalls/gotgcalls/ntgcalls/bindings"
+	ntgcalls "github.com/pytgcalls/gotgcalls/bindings"
 )
 
 type Context struct {

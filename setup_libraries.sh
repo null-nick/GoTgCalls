@@ -63,8 +63,8 @@ copy_files() {
 
   local header_file="$source_folder/include/ntgcalls.h"
   if [ -f "$header_file" ]; then
-    cp -r "$header_file" "ntgcalls/bindings/"
-    echo -e "\e[32mHeader file copied to ntgcalls/bindings/ntgcalls.h\e[0m"
+    cp -r "$header_file" "bindings/"
+    echo -e "\e[32mHeader file copied to bindings/ntgcalls.h\e[0m"
   else
     echo -e "\e[31m[ERROR] Header file ntgcalls.h not found in $source_folder/include/\e[0m"
     exit 1
@@ -72,8 +72,8 @@ copy_files() {
 
   local library_file="$source_folder/libntgcalls.so"
   if [ -f "$library_file" ]; then
-    cp -r "$library_file" "ntgcalls/bindings/lib/"
-    echo -e "\e[32mLibrary file copied to ntgcalls/bindings/lib/libntgcalls.so\e[0m"
+    cp -r "$library_file" "bindings/lib/"
+    echo -e "\e[32mLibrary file copied to bindings/lib/libntgcalls.so\e[0m"
   else
     echo -e "\e[31m[ERROR] Library file libntgcalls.so not found in $source_folder/\e[0m"
     exit 1

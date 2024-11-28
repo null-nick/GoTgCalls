@@ -7,7 +7,7 @@ import "C"
 
 import (
 	"github.com/amarnathcjd/gogram/telegram"
-	ntgcalls "github.com/pytgcalls/gotgcalls/ntgcalls/bindings"
+	ntgcalls "github.com/pytgcalls/gotgcalls/bindings"
 )
 
 func Client(apiId int32, apiHash string, sessionName string, testBackend bool) *Context {

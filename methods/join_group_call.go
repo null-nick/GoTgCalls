@@ -3,8 +3,8 @@ package methods
 import (
 	"fmt"
 	tg "github.com/amarnathcjd/gogram/telegram"
-	ntgcalls "github.com/pytgcalls/gotgcalls/ntgcalls/bindings"
-	"github.com/pytgcalls/gotgcalls/ntgcalls/types"
+	ntgcalls "github.com/pytgcalls/gotgcalls/bindings"
+	"github.com/pytgcalls/gotgcalls/types"
 )
 
 func JoinGroupCall(

@@ -1,6 +1,6 @@
 package types
 
-import "github.com/pytgcalls/gotgcalls/ntgcalls"
+import ntgcalls "github.com/pytgcalls/gotgcalls/bindings"
 
 type MediaStream struct {
 	AudioParameters AudioParameters

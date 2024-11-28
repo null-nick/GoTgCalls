@@ -1,7 +1,7 @@
 package utilities
 
 import (
-	"github.com/pytgcalls/gotgcalls/ntgcalls/types"
+	"github.com/pytgcalls/gotgcalls/types"
 )
 
 func GetStreamParams(stream types.StreamParams) {

@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/pytgcalls/gotgcalls/ntgcalls/bindings"
+	"github.com/pytgcalls/gotgcalls/bindings"
 )
 
 type StreamParams struct {

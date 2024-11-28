@@ -1,5 +1,9 @@
-/.idea/
-.DS_Store
 /*.sum
+/*.session
+/.idea/
 /output/
-/ntgcalls/bindings/lib/libntgcalls.*
+/bindings/lib/*.so
+/bindings/lib/*.dylib
+/bindings/lib/*.a
+/bindings/lib/*.dll
+.DS_Store
