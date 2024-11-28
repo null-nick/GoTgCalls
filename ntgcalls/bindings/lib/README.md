@@ -42,13 +42,13 @@ Manually move the extracted library file into the `lib` folder:
 ├── ntgcalls/
 │   ├── bindings/
 │       ├── lib/
-│           ├── ntgcalls.so  # Linux example
+│           ├── libntgcalls.so  # Linux example
 ```
 
 ### 3. Set Permissions (Linux)
 On Linux, ensure the file has executable permissions using the `chmod` command:
 ```bash
-chmod +x ntgcalls.so
+chmod +x libntgcalls.so
 ```
 
 ### 4. Verify the Setup
@@ -66,7 +66,7 @@ Once the file has been placed in the correct folder:
 - **Error: Permission denied** (Linux):  
   Ensure the file has executable permissions using the `chmod` command:
   ```bash
-  chmod +x ntgcalls.so
+  chmod +x libntgcalls.so
   ```
 
 - **Compatibility Issues**:  
