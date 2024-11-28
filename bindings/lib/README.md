@@ -1,6 +1,6 @@
 # README - Native Libraries Download for GoTgCalls
 
-This folder (`/GoTgCalls/ntgcalls/bindings/lib`) is dedicated to loading the native libraries required by **GoTgCalls**. Users are required to manually download the appropriate library based on their operating system, unless they use the `setup_libraries.sh` script that automates the process.
+This folder (`/GoTgCalls/bindings/lib`) is dedicated to loading the native libraries required by **GoTgCalls**. Users must download the appropriate library manually based on their operating system.
 
 ## System Requirements
 
@@ -8,7 +8,7 @@ To ensure **GoTgCalls** functions properly, you need to download the specific **
 
 Supported library types: **`-shared_libs.zip`**
 
-### Currently Unsupported Platforms
+### Platforms Currently Unsupported
 The following platforms are not currently supported by **GoTgCalls**:
 - **Linux ARM**
 - **Windows ARM**
@@ -35,14 +35,13 @@ After downloading the appropriate `.zip` file:
     - `.dll` (Windows)
     - `.dylib` (macOS)
 
-### 2. Move the File to the `/GoTgCalls/ntgcalls/bindings/lib` Folder
+### 2. Move the File to the `/GoTgCalls/bindings/lib` Folder
 Manually move the extracted library file into the `lib` folder:
 ```
 /GoTgCalls/
-├── ntgcalls/
-│   ├── bindings/
-│       ├── lib/
-│           ├── libntgcalls.so  # Example for Linux
+├── bindings/
+│   ├── lib/
+│   │   ├── libntgcalls.so  # Linux example
 ```
 
 ### 3. Set Permissions (Linux)
@@ -54,14 +53,14 @@ chmod +x libntgcalls.so
 ### 4. Verify the Setup
 Once the file has been placed in the correct folder:
 - Run the **GoTgCalls** client.
-- Verify that there are no errors related to loading the native library.
+- Check that there are no errors related to loading the native library.
 
 ## Troubleshooting
 
 - **Error: "Library not found"**:  
   Make sure you:
     - Downloaded the correct file for your operating system.
-    - Placed the file in the `/GoTgCalls/ntgcalls/bindings/lib` folder.
+    - Placed the file in the `/GoTgCalls/bindings/lib` folder.
 
 - **Error: Permission denied** (Linux):  
   Ensure the file has executable permissions using the `chmod` command:
@@ -85,7 +84,7 @@ The `setup_libraries.sh` script automatically performs the following actions:
 1. **Detects the Operating System**: The script automatically detects the operating system being used (Linux, Windows, macOS).
 2. **Downloads the Correct Package**: Based on the detected OS, the script downloads the appropriate `-shared_libs.zip` package from the GitHub repository.
 3. **Extracts the Files**: Once downloaded, the script extracts the contents of the `.zip` file.
-4. **Moves the Files**: The script moves the extracted library file into the `/GoTgCalls/ntgcalls/bindings/lib` folder.
+4. **Moves the Files**: The script moves the extracted library file into the `/GoTgCalls/bindings/lib` folder.
 5. **Sets Permissions** (Linux): If the OS is Linux, the script automatically sets the executable permissions for the native library.
 
 ### Usage
@@ -93,7 +92,12 @@ The `setup_libraries.sh` script automatically performs the following actions:
 To run the script, simply execute the following command in the terminal (from the root of the project):
 
 ```bash
-cd GoTgCalls/ && setup_libraries.sh
+cd GoTgCalls/ && ./setup_libraries.sh
+```
+
+> **Note**: Ensure that the script has execute permissions. If it does not, run:
+```bash
+chmod +x setup_libraries.sh
 ```
 
 The script will automatically handle downloading, extracting, and setting up the libraries.
